@@ -44,7 +44,7 @@ function ContactUs() {
           invaluable in helping me improve it further. As a personal project,
           I'm eager to hear your thoughts. If this project sparks your interest
           and you'd like to contribute, please reach out—we can work together to
-          scale it
+          scale it.
         </p>
         <p className="mt-5 text-sm md:text-base">With Love, MAYANK GUPTA 💚</p>
       </div>
