@@ -20,14 +20,18 @@ function ContactUs() {
               className="block text-lg md:text-xl font-light py-3 md:py-5"
               href="mailto:gupta.mayank.mg02@gmail.com"
             >
-              <EmailIcon style={{ height: "30px", width: "30px", paddingRight: "10px" }} />
+              <EmailIcon
+                style={{ height: "30px", width: "30px", paddingRight: "10px" }}
+              />
               Gmail
             </a>
             <a
               className="block text-lg md:text-xl font-light"
               href="https://www.linkedin.com/in/mayank-gupta-aa1028208/"
             >
-              <LinkedInIcon style={{ height: "30px", width: "30px", paddingRight: "10px" }} />
+              <LinkedInIcon
+                style={{ height: "30px", width: "30px", paddingRight: "10px" }}
+              />
               LinkedIn
             </a>
           </div>
@@ -36,15 +40,13 @@ function ContactUs() {
 
       <div className="p-10 md:p-20">
         <p className="text-sm md:text-base">
-          This is the first prototype or version of this project. So your reviews
-          will greatly matter in improving this further. So, please let me know
-          what you think about this project. This is a personal project of mine.
-          If this project fascinates anyone who is willing to contribute, do reach
-          me out, we will scale this together.
+          This is the first prototype of my project, and your feedback will be
+          invaluable in helping me improve it further. As a personal project,
+          I'm eager to hear your thoughts. If this project sparks your interest
+          and you'd like to contribute, please reach out—we can work together to
+          scale it
         </p>
-        <p className="mt-5 text-sm md:text-base">
-          With Love, MAYANK GUPTA 💚
-        </p>
+        <p className="mt-5 text-sm md:text-base">With Love, MAYANK GUPTA 💚</p>
       </div>
     </div>
   );
