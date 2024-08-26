@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 
-const socket = io("http://localhost:5000/");
+const socket = io("http://localhost:5001/");
 
 function GetStarted() {
   const [prompt, setPrompt] = useState("");
