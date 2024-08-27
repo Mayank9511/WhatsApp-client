@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 
-const socket = io("http://localhost:5001/");
+const socket = io("https://77517a4f60947ebda5197dffde826bf5.serveo.net");
 
 function GetStarted() {
   const [prompt, setPrompt] = useState("");
@@ -13,10 +13,9 @@ function GetStarted() {
   const [linked, setLinked] = useState(false);
 
   const [socketId, setSocketId] = useState("");
-  
+
   socket.on("hello", (id) => {
     setSocketId(id);
-    // console.log("hello: ", id);
 
     try {
       setLoader(true);
@@ -47,20 +46,6 @@ function GetStarted() {
     }
   };
 
-  // const handleQR = () => {
-  //   try {
-  //     setLoader(true);
-  //     socket.emit("QR", socketId);
-  //     socket.on("QRcode", (base64Qr) => {
-  //       setQrImage(base64Qr);
-  //       setLoader(false);
-  //     });
-  //   } catch (error) {
-  //     setLoader(false);
-  //     console.error("Error fetching QR image:", error);
-  //   }
-  // };
-
   useEffect(() => {
     socket.on("connect", () => {
       // console.log("socket is connected: ", socket.id);
@@ -69,12 +54,6 @@ function GetStarted() {
     socket.on("disconnect",socket.id);
     
   }, []);
-
-  // useEffect(() => {
-  //   console.log("Loader state changed:", loader);
-  //   // if (loader) console.log("is loading:");
-  //   // else console.log("loading is completed:");
-  // }, [loader]);
 
   return (
     <div
@@ -169,3 +148,4 @@ function GetStarted() {
 }
 
 export default GetStarted;
+

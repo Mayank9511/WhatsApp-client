@@ -4,7 +4,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function ContactUs() {
   return (
-    <div id="contactUsSection" className="min-h-screen bg-zinc-900 text-white">
+    <div
+      id="contactUsSection"
+      className="flex flex-col justify-between min-h-screen bg-zinc-900 text-white"
+    >
       <div className="flex flex-col md:flex-row gap-5 w-full p-10 md:p-20">
         <div className="w-full md:w-1/2">
           <h1 className="text-[12vw] md:text-[8vw] font-semibold uppercase leading-none">
@@ -38,15 +41,18 @@ function ContactUs() {
         </div>
       </div>
 
-      <div className="p-10 md:p-20">
+      <div className="p-10 md:p-20 mt-auto">
         <p className="text-sm md:text-base">
-          This is the first prototype of my project, and your feedback will be
-          invaluable in helping me improve it further. As a personal project,
-          I'm eager to hear your thoughts. You can send me a mail or connect on
-          LinkedIn. If this project sparks your interest and you'd like to
-          contribute, please reach out we wil work together to scale it.
+          This is the first version of "Your Personal WhatsApp Assistant". So,
+          your feedback will be invaluable in helping me improve it further. As
+          a personal project, I'm eager to hear your thoughts. You can send me a
+          mail or connect on LinkedIn. If this project excites you enough and
+          you'd like to contribute, please reach out we will work together to
+          scale it.
         </p>
-        <p className="mt-5 text-sm md:text-base">With Love, MAYANK GUPTA 💚</p>
+        <p className="mt-5 pb-5 text-sm md:text-base">
+          With Love, MAYANK GUPTA 💚
+        </p>
       </div>
     </div>
   );
