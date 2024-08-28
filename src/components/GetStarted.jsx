@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io("https://aa3e04ef791064c09e2794b621d34c1b.serveo.net");
+const socket = io("https://25d65e7756df02ab581fbee54de8c890.serveo.net/");
 // const socket = io("http://localhost:5001");
 
 function GetStarted() {
@@ -151,16 +151,6 @@ function GetStarted() {
           </div>
         </div>
       </div>
-      <Snackbar
-        open={alertOpen}
-        autoHideDuration={5000}
-        onClose={() => setAlertOpen(false)}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-      >
-        <Alert severity="success" sx={{ width: "300px" }}>
-          This is an info Alert.
-        </Alert>
-      </Snackbar>
 
       <Snackbar
         open={linked}
