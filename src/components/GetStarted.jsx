@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
+import { motion } from "framer-motion";
 
-const socket = io("https://77517a4f60947ebda5197dffde826bf5.serveo.net");
+const socket = io("https://0e0e542dbf11ec00c7d8dba00bfd8875.serveo.net/");
+// const socket = io("http://localhost:5001");
 
 function GetStarted() {
   const [prompt, setPrompt] = useState("");
@@ -11,8 +13,8 @@ function GetStarted() {
   const [loader, setLoader] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [linked, setLinked] = useState(false);
-
   const [socketId, setSocketId] = useState("");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   socket.on("hello", (id) => {
     setSocketId(id);
@@ -39,6 +41,12 @@ function GetStarted() {
   // };
 
   const handleSubmit = async () => {
+    setIsAnimating(true);
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1500);
+
     try {
       socket.emit("prompt", { prompt, socketId });
     } catch (error) {
@@ -46,13 +54,23 @@ function GetStarted() {
     }
   };
 
+  const bounceAnimation = {
+    animate: {
+      x: [0, 2, 4, 6, 8, 10, 12, 0],
+      y: [0, -15, 0, -10, 0, -5, 0, 0],
+      transition: {
+        duration: 1.5,
+        times: [0, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 1],
+      },
+    },
+  };
+
   useEffect(() => {
     socket.on("connect", () => {
       // console.log("socket is connected: ", socket.id);
     });
 
-    socket.on("disconnect",socket.id);
-    
+    socket.on("disconnect", socket.id);
   }, []);
 
   return (
@@ -73,13 +91,14 @@ function GetStarted() {
             Steps:
           </h1>
           <div className="py-2">
-            Step: 1. Link your WhatsApp by scanning the QR (from the linked
-            device section of WhatsApp)
+            Step: 1. Link your WhatsApp by scanning the QR (from the Linked
+            Devices section of WhatsApp)
           </div>
           <div className="py-2">
-            Step: 2. Enter the prompt according to which replies will be
-            generated. For example, "I will be in college from 10am to 4pm and
-            then will be going to a movie. I will be free after 9pm."
+            SStep: 2. Enter the prompt according to which replies will be
+            generated. For example: "I will be in college from 10 am to 4 pm and
+            then will be going to a movie. I will be free after 9 pm.", you can
+            also set personalities like "behave like Elon Musk" etc.
           </div>
           <div className="py-2">
             Step: 3. Now relax, your WhatsApp messages will be replied to
@@ -88,28 +107,38 @@ function GetStarted() {
           <div className="py-2">
             <b>NOTE: </b> Your device will automatically be unlinked as soon as
             you close this tab or browser. This will cause the feature to stop.
-            You can also manually unlink your device from WhatsApp to stop this
-            functionality.
+            You can also manually unlink your device from WhatsApp to stop
+            automatic replies.
           </div>
           <input
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Enter your prompt"
+            placeholder="Example: I am Iron Man"
             className="w-full md:w-3/4 h-[10vw] md:h-[5vw] p-[2vw] md:p-[1.5vw] mt-[4vw] md:mt-[2vw] rounded-xl"
           />
           <button
             onClick={handleSubmit}
-            className="flex uppercase gap-4 md:gap-10 items-center px-6 md:px-10 py-4 md:py-6 bg-zinc-900 rounded-full mt-6 md:mt-10 text-white"
+            className="flex uppercase gap-1 md:gap-1 items-center px-6 md:px-10 py-4 md:py-6 bg-zinc-900 rounded-full mt-6 md:mt-10 text-white"
           >
             Set Prompt
-            <div className="w-2 h-2 bg-zinc-100 rounded-full"></div>
+            <motion.div
+              animate={isAnimating ? bounceAnimation.animate : {}}
+              className="w-[4px] h-[4px] mt-[13px] bg-zinc-100 rounded-full"
+            ></motion.div>
           </button>
         </div>
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="w-[320px] h-[320px] m-[5vw] md:ml-[4vw] rounded-3xl bg-[#fff]">
             {loader && (
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "40%",
+                }}
+              >
                 <CircularProgress />
               </Box>
             )}
@@ -148,4 +177,3 @@ function GetStarted() {
 }
 
 export default GetStarted;
-

@@ -10,7 +10,7 @@ function ContactUs() {
     >
       <div className="flex flex-col md:flex-row gap-5 w-full p-10 md:p-20">
         <div className="w-full md:w-1/2">
-          <h1 className="text-[12vw] md:text-[8vw] font-semibold uppercase leading-none">
+          <h1 className="pt-10 text-[12vw] md:text-[8vw] font-semibold uppercase leading-none">
             Contact
           </h1>
           <h1 className="text-[12vw] md:text-[8vw] font-semibold uppercase leading-none">
@@ -41,16 +41,16 @@ function ContactUs() {
         </div>
       </div>
 
-      <div className="p-10 md:p-20 mt-auto">
-        <p className="text-sm md:text-base">
+      <div className=" flex-row p-10 md:p-20 mt-auto">
+        <p className="text-center align-center text-sm md:text-base">
           This is the first version of "Your Personal WhatsApp Assistant". So,
           your feedback will be invaluable in helping me improve it further. As
-          a personal project, I'm eager to hear your thoughts. You can send me a
-          mail or connect on LinkedIn. If this project excites you enough and
-          you'd like to contribute, please reach out we will work together to
-          scale it.
+          a personal project, I'm eager to hear your thoughts. You can send me
+          an email or connect on LinkedIn. If this project excites you enough
+          and you would like to contribute, please reach out, and we will work
+          together to scale it.
         </p>
-        <p className="mt-5 pb-5 text-sm md:text-base">
+        <p className="text-center mt-5 pb-5 text-sm md:text-base">
           With Love, MAYANK GUPTA 💚
         </p>
       </div>
