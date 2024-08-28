@@ -41,7 +41,7 @@ function AboutUs() {
 
       <div className="border-t-[1px] border-zinc-800 my-10 md:mt-10 lg:mt-10 flex flex-col md:flex-row justify-between items-center px-6 md:px-10">
         <div className="w-full mt-10 md:pt-0 md:w-3/5 px-10 md:px-10 text-sm md:text-base ">
-          This app lets you create your own WhatsApp Assistant that can
+          This application lets you create your own WhatsApp Assistant that can
           automatically reply to your messages based on your preferences,
           powered by AI. For instance, if you're in an exam or a meeting, you
           can set the time when you'll be available, and anyone who messages you
