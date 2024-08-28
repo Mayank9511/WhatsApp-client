@@ -95,7 +95,7 @@ function GetStarted() {
             Devices section of WhatsApp)
           </div>
           <div className="py-2">
-            SStep: 2. Enter the prompt according to which replies will be
+            Step: 2. Enter the prompt according to which replies will be
             generated. For example: "I will be in college from 10 am to 4 pm and
             then will be going to a movie. I will be free after 9 pm.", you can
             also set personalities like "behave like Elon Musk" etc.
