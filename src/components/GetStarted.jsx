@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io("https://f60adb1f6ff07df5f09ef3b25d418902.serveo.net/");
+const socket = io("https://3c5d833be8acc15d54c938c37f873c8f.serveo.net");
 // const socket = io("http://localhost:5001");
 
 function GetStarted() {
