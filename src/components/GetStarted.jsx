@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io("https://25d65e7756df02ab581fbee54de8c890.serveo.net/");
+const socket = io("https://f60adb1f6ff07df5f09ef3b25d418902.serveo.net/");
 // const socket = io("http://localhost:5001");
 
 function GetStarted() {
@@ -78,7 +78,7 @@ function GetStarted() {
       id="getStartedSection"
       className="w-full p-8 sm:p-12 md:p-16 lg:p-20 bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black"
     >
-      <h1 className=" text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4.5vw] pt-20 leading-none tracking-tight">
+      <h1 className=" text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4.5vw] leading-none tracking-tight">
         Get Started
       </h1>
       <div className="py-4 text-sm md:text-base lg:text-lg">
@@ -91,18 +91,17 @@ function GetStarted() {
             Steps:
           </h1>
           <div className="py-2">
-            Step: 1. Link your WhatsApp by scanning the QR (from the Linked
-            Devices section of WhatsApp)
+            <b>Step: 1 </b> Link your WhatsApp by scanning the QR (from the
+            Linked Devices section of WhatsApp)
           </div>
           <div className="py-2">
-            Step: 2. Enter the prompt according to which replies will be
-            generated. For example: "I will be in college from 10 am to 4 pm and
-            then will be going to a movie. I will be free after 9 pm.", you can
-            also set personalities like "behave like Elon Musk" etc.
+            <b> Step: 2 </b> Enter the prompt that will guide the generation of
+            replies. For example: "I am a Software Developer." You can also specify personalities, like "respond in a formal
+            tone and with greetings" or similar.
           </div>
           <div className="py-2">
-            Step: 3. Now relax, your WhatsApp messages will be replied to
-            automatically.
+            <b> Step: 3 </b> Now relax, your WhatsApp messages will be replied
+            to automatically.
           </div>
           <div className="py-2">
             <b>NOTE: </b> Your device will automatically be unlinked as soon as
@@ -115,16 +114,16 @@ function GetStarted() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="Example: I am Iron Man"
-            className="w-full md:w-3/4 h-[10vw] md:h-[5vw] p-[2vw] md:p-[1.5vw] mt-[4vw] md:mt-[2vw] rounded-xl"
+            className="w-full md:w-3/4 h-[10vw] md:h-[5vw] p-[2vw] md:p-[1.5vw] mt-[2vw] rounded-xl"
           />
           <button
             onClick={handleSubmit}
-            className="flex uppercase gap-1 md:gap-1 items-center px-6 md:px-10 py-4 md:py-6 bg-zinc-900 rounded-full mt-6 md:mt-10 text-white"
+            className="flex uppercase gap-1 md:gap-1 items-center px-6 md:px-10 py-4 md:py-6 bg-zinc-900 rounded-full mt-[2vw] text-white"
           >
             Set Prompt
             <motion.div
               animate={isAnimating ? bounceAnimation.animate : {}}
-              className="w-[4px] h-[4px] mt-[13px] bg-zinc-100 rounded-full"
+              className="w-[4px] h-[4px] mt-[12px] bg-zinc-100 rounded-full"
             ></motion.div>
           </button>
         </div>

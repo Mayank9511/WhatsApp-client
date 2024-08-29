@@ -15,7 +15,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="fixed bg-zinc-900 opacity-75 z-[999] w-full pl-10 px-6 py-4 md:px-10 md:py-6 lg:px-20 lg:py-8 font-['Neue Montreal'] flex justify-between items-center">
+    <div className="fixed bg-zinc-900 opacity-75 z-[999] w-full pl-10 px-6 py-4 md:px-10 md:py-6 lg:px-20 lg:py-6 font-['Neue Montreal'] flex justify-between items-center">
 
       <div className="links flex gap-[5vw] text-sm md:text-base lg:text-lg">
         {sections.map((section, index) => (
