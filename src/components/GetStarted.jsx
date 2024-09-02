@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
-import { CircularProgress, Snackbar, Box, Alert, appBarClasses } from "@mui/material";
+import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
-import axios from "axios";
 
 const socket = io("https://laugh-increases-say-joins.trycloudflare.com");
 // const socket = io("http://localhost:5002");
