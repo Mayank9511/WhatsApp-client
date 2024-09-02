@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
-import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
+import { CircularProgress, Snackbar, Box, Alert, appBarClasses } from "@mui/material";
 import { motion } from "framer-motion";
+import axios from "axios";
 
-const socket = io("https://6ca1028c2d3045e5472ff3ae62dab143.serveo.net");
-// const socket = io("http://localhost:5001");
+const socket = io("https://7d16e5f0f7785c.lhr.life/");
+// const socket = io("http://localhost:5002");
 
 function GetStarted() {
   const [prompt, setPrompt] = useState("");
@@ -70,6 +71,7 @@ function GetStarted() {
       // console.log("socket is connected: ", socket.id);
     });
 
+    axios.get("http:localhost:")
     socket.on("disconnect", socket.id);
   }, []);
 
