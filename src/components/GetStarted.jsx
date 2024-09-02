@@ -5,7 +5,7 @@ import { CircularProgress, Snackbar, Box, Alert, appBarClasses } from "@mui/mate
 import { motion } from "framer-motion";
 import axios from "axios";
 
-const socket = io("https://7d16e5f0f7785c.lhr.life/");
+const socket = io("https://laugh-increases-say-joins.trycloudflare.com");
 // const socket = io("http://localhost:5002");
 
 function GetStarted() {
