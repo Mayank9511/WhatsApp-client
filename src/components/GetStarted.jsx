@@ -70,8 +70,6 @@ function GetStarted() {
     socket.on("connect", () => {
       // console.log("socket is connected: ", socket.id);
     });
-
-    axios.get("http:localhost:")
     socket.on("disconnect", socket.id);
   }, []);
 
@@ -85,7 +83,7 @@ function GetStarted() {
       </h1>
       <div className="py-4 text-sm md:text-base lg:text-lg">
         Below are the steps defined to start the automated reply feature on your
-        WhatsApp.
+        WhatsApp
       </div>
       <div className="w-full flex flex-col md:flex-row gap-8 border-t-[1px] border-[#a1b562]">
         <div className="w-full md:w-1/2">
