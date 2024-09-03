@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io(" https://architecture-relationship-sleep-pas.trycloudflare.com");
+const socket = io("https://architecture-relationship-sleep-pas.trycloudflare.com");
 // const socket = io("http://localhost:5001");
 
 function GetStarted() {
