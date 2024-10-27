@@ -1,5 +1,7 @@
 # WhatsApp Assistant
 
+## Video Link: https://drive.google.com/file/d/1u9X0giPnAsLG6hKJ5WMGJxAs5JJ1QZt7/view
+
 ## Overview
 
 WhatsApp Assistant is a powerful tool designed to integrate with WhatsApp using `wppconnect` and Gemma and OpenAI. It facilitates real-time communication by generating QR codes for easy connection, handling message responses, and providing automated assistance through intelligent chat interactions.
