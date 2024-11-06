@@ -3,7 +3,6 @@ import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
-import { motion } from "framer-motion";
 
 const tunnel = import.meta.env.VITE_TUNNEL;
 const socket = io(tunnel);
@@ -65,8 +64,6 @@ function GetStarted() {
       // console.log("socket is connected: ", socket.id);
     });
     socket.on("disconnect", socket.id);
-
-    socket.on("disconnect", socket.id);
   }, []);
 
   return (
@@ -117,10 +114,6 @@ function GetStarted() {
             className="flex uppercase gap-1 md:gap-1 items-center px-6 md:px-10 py-4 md:py-6 bg-zinc-900 rounded-full mt-[20px] text-white"
           >
             Set Prompt
-            <motion.div
-              animate={isAnimating ? bounceAnimation.animate : {}}
-              className="w-[4px] h-[4px] mt-[12px] bg-zinc-100 rounded-full"
-            ></motion.div>
             <motion.div
               animate={isAnimating ? bounceAnimation.animate : {}}
               className="w-[4px] h-[4px] mt-[12px] bg-zinc-100 rounded-full"
