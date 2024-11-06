@@ -3,6 +3,7 @@ import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const tunnel = import.meta.env.VITE_TUNNEL;
 const socket = io(tunnel);
@@ -63,6 +64,7 @@ function GetStarted() {
     socket.on("connect", () => {
       // console.log("socket is connected: ", socket.id);
     });
+    socket.on("disconnect", socket.id);
 
     socket.on("disconnect", socket.id);
   }, []);
@@ -72,12 +74,12 @@ function GetStarted() {
       id="getStartedSection"
       className="w-full p-8 sm:p-12 md:p-16 lg:p-20 bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black"
     >
-      <h1 className=" text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4.5vw] pt-20 leading-none tracking-tight">
+      <h1 className=" text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4.5vw] leading-none tracking-tight">
         Get Started
       </h1>
       <div className="py-4 text-sm md:text-base lg:text-lg">
         Below are the steps defined to start the automated reply feature on your
-        WhatsApp.
+        WhatsApp
       </div>
       <div className="w-full flex flex-col md:flex-row gap-8 border-t-[1px] border-[#a1b562]">
         <div className="w-full md:w-1/2">
@@ -85,23 +87,23 @@ function GetStarted() {
             Steps:
           </h1>
           <div className="py-2">
-            Step: 1. Link your WhatsApp by scanning the QR (from the linked
-            device section of WhatsApp)
+            <b>Step: 1 </b> Link your WhatsApp by scanning the QR (from the
+            Linked Devices section of WhatsApp)
           </div>
           <div className="py-2">
-            Step: 2. Enter the prompt according to which replies will be
-            generated. For example, "I will be in college from 10am to 4pm and
-            then will be going to a movie. I will be free after 9pm."
+            <b> Step: 2 </b> Enter the prompt that will guide the generation of
+            replies. For example: "I am a Software Developer." You can also specify personalities, like "respond in a formal
+            tone and with greetings" or similar.
           </div>
           <div className="py-2">
-            Step: 3. Now relax, your WhatsApp messages will be replied to
-            automatically.
+            <b> Step: 3 </b> Now relax, your WhatsApp messages will be replied
+            to automatically.
           </div>
           <div className="py-2">
             <b>NOTE: </b> Your device will automatically be unlinked as soon as
             you close this tab or browser. This will cause the feature to stop.
-            You can also manually unlink your device from WhatsApp to stop this
-            functionality.
+            You can also manually unlink your device from WhatsApp to stop
+            automatic replies.
           </div>
           <input
             type="text"
@@ -115,6 +117,10 @@ function GetStarted() {
             className="flex uppercase gap-1 md:gap-1 items-center px-6 md:px-10 py-4 md:py-6 bg-zinc-900 rounded-full mt-[20px] text-white"
           >
             Set Prompt
+            <motion.div
+              animate={isAnimating ? bounceAnimation.animate : {}}
+              className="w-[4px] h-[4px] mt-[12px] bg-zinc-100 rounded-full"
+            ></motion.div>
             <motion.div
               animate={isAnimating ? bounceAnimation.animate : {}}
               className="w-[4px] h-[4px] mt-[12px] bg-zinc-100 rounded-full"

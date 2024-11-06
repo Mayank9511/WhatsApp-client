@@ -3,7 +3,11 @@ import React from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 
 function AboutUs() {
-  motion;
+  const handleScroll = () => {
+    event.preventDefault();
+    const section = document.getElementById("getStartedSection");
+    section.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div
       data-scroll
@@ -37,24 +41,27 @@ function AboutUs() {
 
       <div className="border-t-[1px] border-zinc-800 my-10 md:mt-10 lg:mt-10 flex flex-col md:flex-row justify-between items-center px-6 md:px-10">
         <div className="w-full mt-10 md:pt-0 md:w-3/5 px-10 md:px-10 text-sm md:text-base ">
-          This app helps you create your own WhatsApp Assistant which can reply to
-          your WhatsApp messages automatically according to requirements using
-          AI. Let me show you a use case. Suppose you are giving an exam or are
-          in a meeting. So you can set the time when you will be free and anyone
-          messaging you might be replied with something similar to this "I am
-          currently in a meeting, will call you after some time." These
-          responses will keep on changing according to the message received as
-          these responses are generated using AI.
+          This application lets you create your very own personalized WhatsApp
+          Assistant. As it can automatically respond to messages for you. So, if
+          you're busy and can't reply, your assistant could send something like
+          "I'm tied up at the moment, but I'll get back to you soon!" Also, if
+          someone asks a general question like "How do I make pasta?" your
+          assistant can give an AI-generated answer using up-to-date info. Plus,
+          you can totally customize your assistant's personality you could make
+          it funny, or make it talk like Tony Stark!
         </div>
         <div className="start py-10 mt-5 md:mt-0 flex items-center gap-3 md:gap-5">
           <div className="px-4 py-2 border-[1px] border-zinc-400 rounded-full font-light text-sm md:text-md lg:text-lg uppercase">
             Automate your WhatsApp Messages
           </div>
-          <div className="w-8 h-8 md:w-10 md:h-10 border-[2px] border-zinc-500 rounded-full flex items-center justify-center">
+          <button
+            onClick={handleScroll}
+            className="w-8 h-8 md:w-10 md:h-10 border-[2px] border-zinc-500 rounded-full flex items-center justify-center"
+          >
             <span className="rotate-[180deg]">
               <FaArrowUpLong />
             </span>
-          </div>
+          </button>
         </div>
       </div>
     </div>
