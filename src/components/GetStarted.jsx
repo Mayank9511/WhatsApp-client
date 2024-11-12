@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io("https://menses.serveo.net");
+const socket = io("https://uiolentia.serveo.net");
 
 function GetStarted() {
   const [prompt, setPrompt] = useState("");
