@@ -6,6 +6,7 @@ import Eyes from "./components/Eyes";
 import LocomotiveScroll from "locomotive-scroll";
 import ContactUs from "./components/ContactUs";
 import AboutUs from "./components/AboutUs";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <GetStarted />
       <Eyes />
       <ContactUs />
+      <Analytics />
     </div>
   );
 }
