@@ -4,7 +4,8 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io("ps://nathan-catering-streams-dan.trycloudflare.com");
+const socket = io("https://harbour-variety-us-stood.trycloudflare.com");
+
 
 function GetStarted() {
   const [prompt, setPrompt] = useState("");
