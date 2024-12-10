@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { CircularProgress, Snackbar, Box, Alert } from "@mui/material";
 import { motion } from "framer-motion";
 
-const socket = io("https://communications-organized-matched-manchester.trycloudflare.com");
+const socket = io("https://jewelry-exam-deaths-univ.trycloudflare.com");
 
 
 function GetStarted() {
